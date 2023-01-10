@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { Lista } from 'src/app/models/lista.model';
 import { DeseosService } from '../../services/deseos.service';
 
 @Component({
@@ -22,9 +21,8 @@ export class Tab1Page {
 
   async agregarLista() {
     const alert = await this.alertCtrl.create({
-      header: 'Alert',
-      // subHeader:'Subtitle',
-      // message:'XXX',
+      header: 'Agregar lista',
+
       inputs: [
         {
           name: 'titulo',
@@ -43,7 +41,7 @@ export class Tab1Page {
         {
           text: 'Crear',
           handler: (data) => {
-            console.log(data);
+            //console.log(data);
             if (data.titulo.length === '') {
               return;
             }
