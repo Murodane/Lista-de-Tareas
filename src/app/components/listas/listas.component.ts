@@ -26,4 +26,8 @@ export class ListasComponent {
       this.router.navigateByUrl(`/tabs/tab1/agregar/${lista.id}`);
     }
   }
+  borrarLista(lista: Lista) {
+    console.log(lista);
+    this.deseosService.borrarLista(lista);
+  }
 }

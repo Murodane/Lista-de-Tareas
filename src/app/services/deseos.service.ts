@@ -30,7 +30,7 @@ export class DeseosService {
   obtenerLista(id: string | number) {
     id = Number(id);
     //console.log(id)
-    return this.listas.find((listaData) =>  listaData.id === id);
+    return this.listas.find((listaData) => listaData.id === id);
   }
 
   guardarStorage() {
@@ -44,5 +44,10 @@ export class DeseosService {
     } else {
       this.listas = [];
     }
+  }
+
+  borrarLista(lista: Lista) {
+    this.listas = this.listas.filter((listaData) => listaData.id !== lista.id);
+    this.guardarStorage();
   }
 }
